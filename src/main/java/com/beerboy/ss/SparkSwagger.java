@@ -33,6 +33,7 @@ public class SparkSwagger {
 
     public static final String CONF_FILE_NAME = "spark-swagger.conf";
     private String apiPath;
+    private String docPath;
     private Swagger swagger;
     private Service spark;
     private Config config;
@@ -44,6 +45,7 @@ public class SparkSwagger {
         this.swagger = new Swagger();
         this.config = ConfigFactory.parseResources(confPath != null ? confPath : SparkSwagger.CONF_FILE_NAME);
         this.apiPath = this.config.getString("spark-swagger.basePath");
+        this.docPath = this.config.getString("spark-swagger.docPath");
         this.swagger.setBasePath(this.apiPath);
         this.swagger.setExternalDocs(ExternalDocs.newBuilder().build());
         this.swagger.setHost(getHost());
@@ -53,7 +55,7 @@ public class SparkSwagger {
 
     private void configDocRoute() {
         // Configure static mapping
-        String uiFolder = SwaggerHammer.getUiFolder(this.apiPath);
+        String uiFolder = SwaggerHammer.getUiFolder(this.docPath);
         SwaggerHammer.createDir(SwaggerHammer.getSwaggerUiFolder());
         SwaggerHammer.createDir(uiFolder);
         spark.externalStaticFileLocation(uiFolder);

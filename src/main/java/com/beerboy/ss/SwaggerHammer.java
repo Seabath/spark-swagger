@@ -33,7 +33,7 @@ public class SwaggerHammer {
     public void prepareUi(final Config config, Swagger swagger) throws IOException {
         LOGGER.debug("Spark-Swagger: Start compiling Swagger UI");
 
-        String uiFolder = SwaggerHammer.getUiFolder(config.getString("spark-swagger.basePath"));
+        String uiFolder = SwaggerHammer.getUiFolder(config.getString("spark-swagger.docPath"));
 
         // 1 - Extract UI/Templates folder to a temporary folder
         extractUi(uiFolder);
@@ -149,8 +149,8 @@ public class SwaggerHammer {
         LOGGER.debug("Spark-Swagger: Swagger UI file " + fileName + " successfully saved");
     }
 
-    public static String getUiFolder(String basePath) {
-        return System.getProperty("java.io.tmpdir") + "/swagger-ui" + (basePath.startsWith("/") ? "" : "/") + basePath + (basePath.endsWith("/") ? "" : "/");
+    public static String getUiFolder(String docPath) {
+        return System.getProperty("java.io.tmpdir") + "/swagger-ui" + (docPath.startsWith("/") ? "" : "/") + docPath + (docPath.endsWith("/") ? "" : "/");
     }
 
     public static String getSwaggerUiFolder() {

@@ -1,42 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.beerboy.ss</groupId>
+    <groupId>fr.leboncoin.qa</groupId>
     <artifactId>spark-swagger</artifactId>
-    <version>1.0.0.48</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
-    <prerequisites>
-        <maven>3.0.4</maven>
-    </prerequisites>
 
-    <developers>
-        <developer>
-            <id>manusant</id>
-            <name>Manuel Santos</name>
-            <email>ney.br.santos@gmail.com</email>
-        </developer>
-    </developers>
-
-    <licenses>
-        <license>
-            <name>Apache 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <scm>
-        <url>https://github.com/manusant/spark-swagger</url>
-        <connection>scm:git:ssh://git@github.com:manusant/spark-swagger.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:manusant/spark-swagger.git</developerConnection>
-        <tag>spark-swagger-1.0.0.47</tag>
-    </scm>
-
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/manusant/spark-swagger/issues</url>
-    </issueManagement>
+    <parent>
+        <groupId>fr.leboncoin.qa</groupId>
+        <artifactId>super-pom</artifactId>
+        <version>RELEASE</version>
+    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,17 +34,6 @@
         <!-- jacoco api version -->
         <jacoco.api.version>0.7.6.201602180812</jacoco.api.version>
     </properties>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>packagecloud-travis</id>
-            <url>packagecloud+https://packagecloud.io/manusant/beerRepo</url>
-        </snapshotRepository>
-        <repository>
-            <id>packagecloud-travis</id>
-            <url>packagecloud+https://packagecloud.io/manusant/beerRepo</url>
-        </repository>
-    </distributionManagement>
 
     <dependencies>
 
