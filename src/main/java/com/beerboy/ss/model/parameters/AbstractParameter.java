@@ -74,7 +74,11 @@ public abstract class AbstractParameter {
     }
 
     public String getName() {
-        return name;
+        if(name != null && !name.equals("")) {
+            return name;
+        } else {
+            return DEFAULT_NAME;
+        }
     }
 
     public void setName(String name) {
