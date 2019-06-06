@@ -2,11 +2,13 @@ package com.beerboy.ss.model.parameters;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import spark.utils.StringUtils;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public abstract class AbstractParameter {
+    public static final String DEFAULT_NAME = "defaultName";
     private Map<String, Object> vendorExtensions = new LinkedHashMap<>();
     protected String in;
     protected String name;
